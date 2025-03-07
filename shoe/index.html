@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME page</title>
+    <style>
+        .sneakerimage{
+            width: 150px;
+        }
+        .sneakerimage2{
+            width: 250px;
+            height: 150px;
+        }
+        .banner {
+            color: black;
+            padding: 50px 20px;
+        }
+        .sneaker {
+            background: #cc5500;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        .sneaker-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+             
+        }
+        header{
+            padding: 15px 0;
+        }
+        .shop{
+            background-color: #ff6600;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 15px 10px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .shop:hover{
+            background: #cc5500;
+        }
+        .paragraph{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            text-align: center;
+
+        }
+        body{
+            background: url('shoe3.jpg');
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <h1><marquee behavior="scroll" direction="left">karibu shoe palace welcome to shoe palace</marquee></h1>
+         <p class="paragraph">we are shoe palace we offer the best shoes and prices </p>
+    </header>
+   
+    <section class="featured">
+        <h2 class="paragraph">Featured Sneakers</h2>
+        <div class="sneaker-container">
+            <div class="sneaker">
+                <img src="sneaker1.jpg" alt="Sneaker 1" class="sneakerimage">
+                <h3>New Balance</h3>
+                <p>Perfect for running and casual wear.</p>
+                <button onclick="showDetails('New Balance', 'Perfect for running and casual wear.')">View Details</button>
+            </div>
+            <div class="sneaker">
+                <img src="sneaker2.jpg" alt="Sneaker 2" class="sneakerimage2">
+                <h3>Air max</h3>
+                <p>Bold design with premium materials.</p>
+                <button onclick="showDetails('Air max', 'Bold design with premium materials.')">View Details</button>
+            </div>
+        </div>
+    </section>
+    <a href="products.html" target="_blank"><button class="shop">shop now</button></a>
+    <script>
+
+        function showDetails(name, description) {
+            alert(`${name}: ${description}`);
+        }
+    </script>
+</body>
+</html>

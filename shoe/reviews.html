@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #e65c00;
+        }
+        .reviews-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .review {
+            background: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Leave a Review</h2>
+        <form id="reviewForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+
+            <label for="rating">Rating</label>
+            <select id="rating" required>
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Good</option>
+                <option value="3">⭐⭐⭐ - Average</option>
+                <option value="2">⭐⭐ - Poor</option>
+                <option value="1">⭐ - Terrible</option>
+            </select>
+
+            <label for="review">Your Review</label>
+            <textarea id="review" rows="3" required></textarea>
+
+            <button type="submit" class="btn"  onclick="showDetails('we appreciate your review')">Submit Review</button>
+        </form>
+
+        <div class="reviews-container" id="reviews">
+            <h3>Customer Reviews</h3>
+            <!-- Reviews will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function showDetails(description){
+            alert(`${description}`);
+        }
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            
+            const name = document.getElementById('name').value;
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('review').value;
+
+            
+            const reviewContainer = document.getElementById('reviews');
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerHTML = `<strong>${name}</strong> - ⭐${'⭐'.repeat(rating)}<br><p>${reviewText}</p>`;
+
+            
+            reviewContainer.appendChild(reviewElement);
+
+            
+            document.getElementById('reviewForm').reset();
+        });
+    </script>
+
+</body>
+</html>

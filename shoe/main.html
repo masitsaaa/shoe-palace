@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            background: url('shoe.jpg') no-repeat center center/cover;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .nav-button {
+            background: #ff6600;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .nav-button:hover {
+            background: #cc5500;
+            opacity: 1s;
+        }
+        .banner {
+            color: black;
+            padding: 50px 20px;
+        }
+        .sneaker-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sneaker {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .button{
+            width: 60px;
+            border-radius: 5px;
+            border: 2px;
+            background-color: #333;
+            cursor: pointer;
+            color: white;
+        }
+        .button:hover{
+            box-shadow: #333;
+            opacity: 2s;
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Welcome to Shoe palace</h1>
+        <nav>
+            <a href="index.html" target="_blank" class="nav-button">Home</a>
+            <a href="products.html" target="_blank" class="nav-button">Products</a>
+            <a href="pricing.html" target="_blank" class="nav-button">Pricing</a>
+            <a href="reviews.html" target="_blank" class="nav-button">Reviews</a>
+            <a href="contact.html" target="_blank" class="nav-button">Contact</a>
+        </nav>
+    </header>
+    
+    <section class="banner">
+        <h2>Step Into Comfort & Style</h2>
+        <p>Discover the latest collection of high-performance sneakers.</p>
+        <button onclick="showAlert()" class="button">Shop Now</button>
+    </section>
+    
+    <section class="featured">
+        <h2>Featured Sneakers</h2>
+        <div class="sneaker-container">
+            <div class="sneaker">
+                <h3>New Balance</h3>
+                <p>Perfect for running and casual wear.</p>
+                <button onclick="showDetails('New Balance', 'Perfect for running and casual wear.')">View Details</button>
+            </div>
+            <div class="sneaker">
+                <h3>Air max</h3>
+                <p>Bold design with premium materials.</p>
+                <button onclick="showDetails('Air max', 'Bold design with premium materials.')">View Details</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Shoe palace. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showAlert() {
+            alert('Welcome to Shoe Palace! Explore our latest collection.');
+        }
+
+        function showDetails(name, description) {
+            alert(`${name}: ${description}`);
+        }
+    </script>
+</body>
+</html>

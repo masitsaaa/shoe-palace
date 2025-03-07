@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pricing</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #e65c00;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Shoe Price List</h2>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Nike Air Max</td>
+            <td>ksh3500/=</td>
+        </tr>
+        <tr>
+            <td>Adidas Ultraboost</td>
+            <td>ksh4500/=</td>
+        </tr>
+        <tr>
+            <td>Puma RS-X</td>
+            <td>ksh3000/=</td>
+        </tr>
+        <tr>
+            <td>Reebok Classic</td>
+            <td>ksh2250/=</td>
+        </tr>
+        <tr>
+            <td>New Balance 574</td>
+            <td>ksh2500/=</td>
+        </tr>
+        <tr>
+            <td>Vans Old Skool</td>
+            <td>ksh1200/=</td>
+        </tr>
+        <tr>
+            <td>Converse Chuck Taylor</td>
+            <td>ksh950/=</td>
+        </tr>
+    </table>
+    <div class="container">
+        <h2>Enter Delivery Details</h2>
+        <form action="order-confirmation.html" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit" class="btn" onclick="showDetails('your order has been placed succesfully')">Submit Order</button>
+        </form>
+    </div>
+<script>
+    function showDetails(description){
+        alert(`${description}`);
+    }
+</script>
+
+</body>
+</html>
